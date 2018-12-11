@@ -1,0 +1,30 @@
+
+
+Use C++ Unions to represent matrix entries (double, Matrix (block) or other)
+
+Class-Splitting matrix properties:
+  Sparsity
+    Dense
+      Standard arrays
+    Sparse
+      Maps
+  
+  Storage
+    Row-Major
+    Column-Major
+    Diagonal-Major
+  
+  Properties
+    Square
+    Upper Triangular
+    Lower Triangular
+    Upper Hessenberg
+    Lower Hessenberg
+    Symmetric
+
+Matrix class required functions:
+  Add, Subtract with other matrices
+  Multiply (matrix & vector)
+  Concatenate
+  Slice
+
