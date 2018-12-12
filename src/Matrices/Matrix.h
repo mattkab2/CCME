@@ -8,12 +8,14 @@ class Matrix {
     int n;
 
     Matrix(int m, int n);
-    void set(int i, int j, double x);
-    double get(int i, int j);
+
+    virtual void set(int i, int j, double x) = 0;
+    virtual double get(int i, int j) = 0;
+
     ~Matrix();
 
   private:
-    double** matrixArray;
+    
 };
 
 #endif // MATRIX_H

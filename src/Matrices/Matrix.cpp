@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "Matrix.h"
 
 Matrix::Matrix(int mInput, int nInput) : m(mInput), n(nInput) {
   matrixArray = new double*[m];

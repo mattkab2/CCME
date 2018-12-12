@@ -8,12 +8,12 @@ Class-Splitting matrix properties:
       Standard arrays
     Sparse
       Maps
-  
+
   Storage
     Row-Major
     Column-Major
     Diagonal-Major
-  
+
   Properties
     Square
     Upper Triangular
@@ -28,3 +28,12 @@ Matrix class required functions:
   Concatenate
   Slice
 
+
+Calling order for initialization:
+  Base
+  Structure (X Major)
+    Sets iterator
+  Properties (if applicable)
+    Modifies iterator to only traverse necessary parts
+  Sparsity
+  
