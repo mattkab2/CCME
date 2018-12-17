@@ -1,9 +1,9 @@
 #include "ccme.h"
 #include <stdio.h>
 
-int main(int, char**) {
+int main(int argc, char** argv) {
   // Test initialization and set
-  Matrix a(10,10);
+  NaiveMatrix<double> a(10,10);
   for (int i=0; i < 10; i++) {
     for (int j=0; j < 10; j++) {
       printf("%d \n",a.get(i,j));

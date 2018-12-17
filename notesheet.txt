@@ -5,35 +5,59 @@ Use C++ Unions to represent matrix entries (double, Matrix (block) or other)
 Class-Splitting matrix properties:
   Sparsity
     Dense
-      Standard arrays
     Sparse
-      Maps
 
   Storage
     Row-Major
     Column-Major
     Diagonal-Major
 
-  Properties
-    Square
-    Upper Triangular
-    Lower Triangular
-    Upper Hessenberg
-    Lower Hessenberg
-    Symmetric
+  Non-abstract implementations:
+    Modifiers:
+      Square/Rect
+      Symmetric/Asymm
+    Types:
+      General
+      Triangular (add 2 boolean upper/lower)
+      Hessenberg (add 2 boolean upper/lower)
+
+    Problems:
+      Sym Triangular = Triangular upper&lower
+        Soln: Don't implement symmetric triangular
+
+    Implement (for each combo sparse/dense and row/diag/col):
+      Square General Asymmetric
+      Square General Symmetric
+      Square Triangular Asymmetric
+      Square Hessenberg Asymmetric
+      Square Hessenberg Symmetric (symmetric tridiagonal)
+      Rect General
+
+      = 36 implementations
+
+Implement a data container class for Matrix
+  Templated final element to be float, double, quad, complex, Matrix*
+    Implement in c++ files and compile based on ifdef switches
+    Use partial template specialization to deal with possible pointers
+    This prevents users from doing stupid things like creating a Matrix of strings
 
 Matrix class required functions:
   Add, Subtract with other matrices
+  Add, Subtract combined with set (+= -=)
   Multiply (matrix & vector)
+  Multiply combined with set (*=)
+  Transpose
   Concatenate
   Slice
 
 
-Calling order for initialization:
-  Base
-  Structure (X Major)
-    Sets iterator
-  Properties (if applicable)
-    Modifies iterator to only traverse necessary parts
-  Sparsity
-  
+Todo:
+  Implement cmake enabling/defining of relevant switches
+    Create list of switches somewhere with documentation
+
+  Implement required functions for naive matrix
+  Implement text file input for naive matrix
+  Use naive matrix to write arithmetic unit tests for other matrix types
+
+  Implement Dense/Sparse Matrices and containers as abstract classes
+  Write conversion functions to convert naive type to any type

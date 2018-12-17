@@ -7,8 +7,10 @@
 #configure_file(ccme.pc.in ccme.pc @ONLY)
 
 add_library(ccme SHARED
-  Matrices/matrix.h
-  Matrices/matrix.cpp
+  Matrices/Matrix.h
+  Matrices/Matrix.cpp
+  Matrices/NaiveMatrix.h
+  Matrices/NaiveMatrix.cpp
 )
 
 target_include_directories(ccme PRIVATE .)

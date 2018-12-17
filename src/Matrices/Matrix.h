@@ -15,7 +15,7 @@ class Matrix {
     ~Matrix();
 
   private:
-    
+
 };
 
 #endif // MATRIX_H
