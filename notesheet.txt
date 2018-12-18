@@ -42,18 +42,28 @@ Implement a data container class for Matrix
     This prevents users from doing stupid things like creating a Matrix of strings
 
 Matrix class required functions:
+  Access/set
+    Overload [], const[]
   Add, Subtract with other matrices
-  Add, Subtract combined with set (+= -=)
+    Overload +, -
+  Add, Subtract combined with set
+    Overload +=, -=
   Multiply (matrix & vector)
-  Multiply combined with set (*=)
+    Overload *, *=
   Transpose
+    Overload ~
   Concatenate
+    ??
   Slice
+    Overload const[String], [String]
 
 
 Todo:
   Implement cmake enabling/defining of relevant switches
     Create list of switches somewhere with documentation
+
+  Template Matrix class
+  fill Matrix class with required functions
 
   Implement required functions for naive matrix
   Implement text file input for naive matrix

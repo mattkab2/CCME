@@ -1,0 +1,3 @@
+add_subdirectory(BasicFunctionality)
+add_subdirectory(Arithmetic)
+add_subdirectory(Conversion)

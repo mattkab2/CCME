@@ -2,27 +2,22 @@
 #include <fstream>
 #include <iomanip>
 #include <string>
-//#include "ccme.h"
+#include "ccme.h"
 
 int main(int argc, char** argv) {
   // Load A, B, x, y into arrays (double)
-  double A[8][8];
+  //double A[8][8];
   double B[8][8];
   double x[8];
   double y[8];
 
-  std::ifstream fileIn;
-  fileIn.open("Data/A.txt");
-  for (int i=0; i < 8; i++) {
-    for (int j=0; j < 8; j++) {
-      fileIn >> A[i][j];
-    }
-  }
+  NaiveMatrix<double> A = NaiveMatrix<double>(8,8,"Data/A.txt");
 
+  std::ifstream fileIn;
   fileIn.open("Data/B.txt");
   for (int i=0; i < 8; i++) {
     for (int j=0; j < 8; j++) {
-      fileIn >> B[i][j];
+      fileIn >> B(i,j);
     }
   }
 
