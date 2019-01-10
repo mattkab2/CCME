@@ -1,5 +1,21 @@
 include_directories(${CCME_SOURCE_DIR}/src)
 
-add_executable(testMatrixArithmetic testMatrixArithmetic.cpp)
-target_link_libraries(testMatrixArithmetic ccme)
-add_test(NAME MatrixArithmetic COMMAND testMatrixArithmetic)
+add_executable(testMatrixTranspose testMatrixTranspose.cpp)
+target_link_libraries(testMatrixTranspose ccme)
+add_test(NAME NaiveMatrix_testMatrixTranspose COMMAND testMatrixTranspose)
+
+add_executable(testMatrixAddition testMatrixAddition.cpp)
+target_link_libraries(testMatrixAddition ccme)
+add_test(NAME NaiveMatrix_testMatrixAddition COMMAND testMatrixAddition)
+
+add_executable(testMatrixSubtraction testMatrixSubtraction.cpp)
+target_link_libraries(testMatrixSubtraction ccme)
+add_test(NAME NaiveMatrix_testMatrixSubtraction COMMAND testMatrixSubtraction)
+
+add_executable(testMatrixMatrixMult testMatrixMatrixMult.cpp)
+target_link_libraries(testMatrixMatrixMult ccme)
+add_test(NAME NaiveMatrix_testMatrixMatrixMult COMMAND testMatrixMatrixMult)
+
+add_executable(testMatrixSlice testMatrixSlice.cpp)
+target_link_libraries(testMatrixSlice ccme)
+add_test(NAME NaiveMatrix_testMatrixSlice COMMAND testMatrixSlice)

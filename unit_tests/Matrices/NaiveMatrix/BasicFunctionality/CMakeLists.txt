@@ -1,11 +1,30 @@
 include_directories(${CCME_SOURCE_DIR}/src)
 
-#[[
-add_executable(falseInitialization falseInitialization.cpp)
-target_link_libraries(falseInitialization ccme)
-add_test(NAME NaiveMatrix_DefaultConstructor COMMAND falseInitialization)
-]]
-
 add_executable(emptyInitialization emptyInitialization.cpp)
 target_link_libraries(emptyInitialization ccme)
 add_test(NAME NaiveMatrix_ZeroConstructor COMMAND emptyInitialization)
+
+add_executable(testMatrixSet testMatrixSet.cpp)
+target_link_libraries(testMatrixSet ccme)
+add_test(NAME NaiveMatrix_testMatrixSet COMMAND testMatrixSet)
+
+add_executable(testMatrixCopy testMatrixCopy.cpp)
+target_link_libraries(testMatrixCopy ccme)
+add_test(NAME NaiveMatrix_testMatrixCopy COMMAND testMatrixCopy)
+
+add_executable(testMatrixCopyAssignment testMatrixCopyAssignment.cpp)
+target_link_libraries(testMatrixCopyAssignment ccme)
+add_test(NAME NaiveMatrix_testMatrixCopyAssignment COMMAND testMatrixCopyAssignment)
+
+add_executable(testMatrixDestructor testMatrixDestructor.cpp)
+target_link_libraries(testMatrixDestructor ccme)
+add_test(NAME NaiveMatrix_testMatrixDestructor COMMAND testMatrixDestructor)
+
+add_executable(testMatrixMoveAssignment testMatrixMoveAssignment.cpp)
+target_link_libraries(testMatrixMoveAssignment ccme)
+add_test(NAME NaiveMatrix_testMatrixMoveAssignment COMMAND testMatrixMoveAssignment)
+
+add_executable(testMatrixMoveConstructor testMatrixMoveConstructor.cpp)
+target_link_libraries(testMatrixMoveConstructor ccme)
+add_test(NAME NaiveMatrix_testMatrixMoveConstructor COMMAND testMatrixMoveConstructor)
+
